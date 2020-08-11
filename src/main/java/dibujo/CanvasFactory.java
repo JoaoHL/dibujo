@@ -3,8 +3,8 @@ package dibujo;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CanvasFactory {
-    public static Canvas criaCanvas(String line) {
+public class CanvasFactory implements ExecutorDeComando {
+    public void executa(String line, Canvas canvas) {
         Matcher matcher = Pattern.compile("^C (\\d+) (\\d+)$").matcher(line);
         if (matcher.find()) {
             int width = Integer.parseInt(matcher.group(1));
