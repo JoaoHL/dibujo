@@ -133,32 +133,11 @@ public class Main {
     }
 
     private void criaLinha(String line) {
-        if (canvas == null) {
-            throw new RuntimeException("No canvas. You should create a canvas before creating a new line.");
-        }
-        Matcher matcher = Pattern.compile("^L (\\d+) (\\d+) (\\d+) (\\d+)$").matcher(line);
-        if (matcher.find()) {
-            int startingX = Integer.parseInt(matcher.group(1));
-            int startingY = Integer.parseInt(matcher.group(2));
-            int endingX = Integer.parseInt(matcher.group(3));
-            int endingY = Integer.parseInt(matcher.group(4));
-
-            canvas.createNewLine(startingX, startingY, endingX, endingY);
-        } else {
-            throw new RuntimeException("Invalid parameters for the create new line command. Should be: L <starting x> <starting y> <ending x> <ending y>");
-        }
+        Linha.criaLinha(line, canvas);
     }
 
     private void criaCanvas(String line) {
-        Matcher matcher = Pattern.compile("^C (\\d+) (\\d+)$").matcher(line);
-        if (matcher.find()) {
-            int width = Integer.parseInt(matcher.group(1));
-            int height = Integer.parseInt(matcher.group(2));
-
-            canvas = new Canvas(width, height);
-        } else {
-            throw new RuntimeException("Invalid parameters for the create new canvas command. Should be: C <width> <height>");
-        }
+        canvas = CanvasFactory.criaCanvas(line);
     }
 
     public static void main(String[] args) {
