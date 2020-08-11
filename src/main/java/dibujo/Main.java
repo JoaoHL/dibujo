@@ -97,21 +97,7 @@ public class Main {
     }
 
     private void preencheEspaco(String line) {
-        if (canvas == null) {
-            throw new RuntimeException("No canvas. You should create a canvas before filling it.");
-        }
-
-        Matcher matcher = Pattern.compile("^B (\\d+) (\\d+) (\\w+)$").matcher(line);
-        if (matcher.find()) {
-            int startingX = Integer.parseInt(matcher.group(1));
-            int startingY = Integer.parseInt(matcher.group(2));
-            String colorCharacter = matcher.group(3);
-
-            Position startingPositionToFill = new Position(startingX, startingY);
-            canvas.fill(startingPositionToFill, colorCharacter);
-        } else {
-            throw new RuntimeException("Invalid parameters for the bucket fill command. Should be: B <starting x> <starting y> <color>");
-        }
+        Preenchedor.preencheEspacoComCor(line, canvas);
     }
 
     private void criaRetangulo(String line) {
