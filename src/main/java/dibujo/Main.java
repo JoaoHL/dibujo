@@ -56,7 +56,10 @@ public class Main {
     }
 
     private void criaRetangulo(String line) {
-        Retangulo.adicionaNoCanvas(line, canvas);
+        if (canvas == null) {
+            throw new RuntimeException("No canvas. You should create a canvas before creating a new rectangle.");
+        }
+        Elemento retangulo = Retangulo.cria(line, canvas);
     }
 
     private void criaLinha(String line) {
