@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Linha {
-    public static void criaLinha(String line, Canvas canvas) {
+    public static void adicionaNoCanvas(String line, Canvas canvas) {
         if (canvas == null) {
             throw new RuntimeException("No canvas. You should create a canvas before creating a new line.");
         }

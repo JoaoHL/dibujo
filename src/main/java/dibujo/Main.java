@@ -115,25 +115,11 @@ public class Main {
     }
 
     private void criaRetangulo(String line) {
-        if (canvas == null) {
-            throw new RuntimeException("No canvas. You should create a canvas before creating a new rectangle.");
-        }
-
-        Matcher matcher = Pattern.compile("^R (\\d+) (\\d+) (\\d+) (\\d+)$").matcher(line);
-        if (matcher.find()) {
-            int upperLeftCornerX = Integer.parseInt(matcher.group(1));
-            int upperLeftCornerY = Integer.parseInt(matcher.group(2));
-            int lowerRightCornerX = Integer.parseInt(matcher.group(3));
-            int lowerRightCornerY = Integer.parseInt(matcher.group(4));
-
-            canvas.createNewRectangle(upperLeftCornerX, upperLeftCornerY, lowerRightCornerX, lowerRightCornerY);
-        } else {
-            throw new RuntimeException("Invalid parameters for the create new rectangle command. Should be: L <upper left corner x> <upper left corner y> <lower right corner x> <lower right corner y>");
-        }
+        Retangulo.adicionaNoCanvas(line, canvas);
     }
 
     private void criaLinha(String line) {
-        Linha.criaLinha(line, canvas);
+        Linha.adicionaNoCanvas(line, canvas);
     }
 
     private void criaCanvas(String line) {
