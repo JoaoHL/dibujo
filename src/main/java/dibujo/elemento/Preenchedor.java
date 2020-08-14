@@ -6,7 +6,7 @@ import dibujo.Position;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Preenchedor extends Elemento {
+public class Preenchedor extends ElementoDesenhavel {
 
     private final int startingX;
     private final int startingY;

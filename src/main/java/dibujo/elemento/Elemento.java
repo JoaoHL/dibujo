@@ -12,10 +12,4 @@ public abstract class Elemento {
     public Elemento(String line, String regex) {
         matcher = Pattern.compile(regex).matcher(line);
     }
-
-    public void desenha(Canvas canvas) {
-        if (canvas == null) {
-            throw new RuntimeException("No canvas. You should create a canvas before creating a new rectangle.");
-        }
-    }
 }

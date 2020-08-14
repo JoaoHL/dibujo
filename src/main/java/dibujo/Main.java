@@ -67,7 +67,8 @@ public class Main {
     }
 
     private void criaCanvas(String line) {
-        canvas = CanvasFactory.criaCanvas(line);
+        canvas = new Canvas(line);
+        canvas.constroiPosicoes();
     }
 
     public static void main(String[] args) {

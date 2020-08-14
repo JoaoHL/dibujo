@@ -5,7 +5,7 @@ import dibujo.Canvas;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Linha extends Elemento {
+public class Linha extends ElementoDesenhavel {
 
     private final int endingY;
     private final int endingX;

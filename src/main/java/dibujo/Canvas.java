@@ -1,25 +1,34 @@
 package dibujo;
 
+import dibujo.elemento.Elemento;
+
 import java.io.PrintStream;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Canvas {
+public class Canvas extends Elemento {
 
     private int width;
     private int height;
 
     private Position[][] positions;
 
-    public Canvas(int width, int height) {
-        this.width = width;
-        this.height = height;
+    public Canvas(String line) {
+        super(line, "^C (\\d+) (\\d+)$");
+        if (matcher.find()) {
+            this.width = Integer.parseInt(matcher.group(1));
+            this.height = Integer.parseInt(matcher.group(2));
 
-        if (width <= 0 || height <= 0) {
-            throw new RuntimeException("Invalid parameters: the width and height of the canvas should be greater than zero. Given parameters: " + this);
+            if (width <= 0 || height <= 0) {
+                throw new RuntimeException("Invalid parameters: the width and height of the canvas should be greater than zero. Given parameters: " + this);
+            }
+        } else {
+            throw new RuntimeException("Invalid parameters for the create new canvas command. Should be: C <width> <height>");
         }
+    }
 
-        this.positions = new Position[this.height][this.width];
+    public void constroiPosicoes() {
+       this.positions = new Position[this.height][this.width];
 
         for (int y = 0; y < this.height; y++) {
             for (int x = 0; x < this.width; x++) {
