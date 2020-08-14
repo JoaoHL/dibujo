@@ -1,10 +1,5 @@
 package dibujo.elemento;
 
-import dibujo.Canvas;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class Linha extends ElementoDesenhavel {
 
     private final int endingY;

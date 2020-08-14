@@ -1,5 +1,6 @@
-package dibujo;
+package dibujo.elemento;
 
+import dibujo.Position;
 import dibujo.elemento.Elemento;
 
 import java.io.PrintStream;
@@ -8,8 +9,8 @@ import java.util.Set;
 
 public class Canvas extends Elemento {
 
-    private int width;
-    private int height;
+    private final int width;
+    private final int height;
 
     private Position[][] positions;
 

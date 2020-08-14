@@ -1,7 +1,5 @@
 package dibujo.elemento;
 
-import dibujo.Canvas;
-
 public class Retangulo extends ElementoDesenhavel {
 
     private final int upperLeftCornerX;

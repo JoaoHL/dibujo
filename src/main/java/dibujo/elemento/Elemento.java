@@ -1,7 +1,5 @@
 package dibujo.elemento;
 
-import dibujo.Canvas;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

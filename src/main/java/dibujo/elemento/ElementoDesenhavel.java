@@ -1,7 +1,5 @@
 package dibujo.elemento;
 
-import dibujo.Canvas;
-
 public abstract class ElementoDesenhavel extends Elemento {
 
     public ElementoDesenhavel(String line, String regex) {
