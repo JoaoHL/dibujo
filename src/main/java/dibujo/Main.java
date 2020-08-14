@@ -1,10 +1,10 @@
 package dibujo;
 
+import dibujo.elemento.*;
+
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Main {
 
@@ -52,15 +52,18 @@ public class Main {
     }
 
     private void preencheEspaco(String line) {
-        Preenchedor.preencheEspacoComCor(line, canvas);
+        Preenchedor preenchedor = new Preenchedor(line);
+        preenchedor.desenha(canvas);
     }
 
     private void criaRetangulo(String line) {
-        new Retangulo(line, canvas);
+        Retangulo retangulo = new Retangulo(line);
+        retangulo.desenha(canvas);
     }
 
     private void criaLinha(String line) {
-        new Linha(line, canvas);
+        Linha linha = new Linha(line);
+        linha.desenha(canvas);
     }
 
     private void criaCanvas(String line) {

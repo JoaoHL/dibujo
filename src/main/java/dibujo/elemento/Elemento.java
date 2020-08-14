@@ -1,8 +1,12 @@
-package dibujo;
+package dibujo.elemento;
 
-public class Elemento {
+import dibujo.Canvas;
 
-    public Elemento(String line, Canvas canvas) {
+public abstract class Elemento {
+
+    public Elemento(String line) {}
+
+    public void desenha(Canvas canvas) {
         if (canvas == null) {
             throw new RuntimeException("No canvas. You should create a canvas before creating a new rectangle.");
         }
