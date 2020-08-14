@@ -13,8 +13,7 @@ public class Preenchedor extends Elemento {
     private final String colorCharacter;
 
     public Preenchedor(String line) {
-        super(line);
-        Matcher matcher = Pattern.compile("^B (\\d+) (\\d+) (\\w+)$").matcher(line);
+        super(line, "^B (\\d+) (\\d+) (\\w+)$");
         if (matcher.find()) {
             this.startingX = Integer.parseInt(matcher.group(1));
             this.startingY = Integer.parseInt(matcher.group(2));

@@ -2,9 +2,6 @@ package dibujo.elemento;
 
 import dibujo.Canvas;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class Retangulo extends Elemento {
 
     private final int upperLeftCornerX;
@@ -13,8 +10,7 @@ public class Retangulo extends Elemento {
     private final int lowerRightCornerY;
 
     public Retangulo(String line) {
-        super(line);
-        Matcher matcher = Pattern.compile("^R (\\d+) (\\d+) (\\d+) (\\d+)$").matcher(line);
+        super(line, "^R (\\d+) (\\d+) (\\d+) (\\d+)$");
         if (matcher.find()) {
             this.upperLeftCornerX = Integer.parseInt(matcher.group(1));
             this.upperLeftCornerY = Integer.parseInt(matcher.group(2));

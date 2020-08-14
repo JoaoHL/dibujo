@@ -2,9 +2,16 @@ package dibujo.elemento;
 
 import dibujo.Canvas;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public abstract class Elemento {
 
-    public Elemento(String line) {}
+    protected final Matcher matcher;
+
+    public Elemento(String line, String regex) {
+        matcher = Pattern.compile(regex).matcher(line);
+    }
 
     public void desenha(Canvas canvas) {
         if (canvas == null) {

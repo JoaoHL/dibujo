@@ -13,8 +13,7 @@ public class Linha extends Elemento {
     private final int startingY;
 
     public Linha(String line) {
-        super(line);
-        Matcher matcher = Pattern.compile("^L (\\d+) (\\d+) (\\d+) (\\d+)$").matcher(line);
+        super(line, "^L (\\d+) (\\d+) (\\d+) (\\d+)$");
         if (matcher.find()) {
             this.startingX = Integer.parseInt(matcher.group(1));
             this.startingY = Integer.parseInt(matcher.group(2));
