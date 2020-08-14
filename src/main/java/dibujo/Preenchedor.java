@@ -3,7 +3,11 @@ package dibujo;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Preenchedor {
+public class Preenchedor extends Elemento {
+    public Preenchedor(String line, Canvas canvas) {
+        super(line, canvas);
+    }
+
     public static void preencheEspacoComCor(String line, Canvas canvas) {
         if (canvas == null) {
             throw new RuntimeException("No canvas. You should create a canvas before filling it.");

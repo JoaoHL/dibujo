@@ -3,11 +3,10 @@ package dibujo;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Linha {
-    public static void adicionaNoCanvas(String line, Canvas canvas) {
-        if (canvas == null) {
-            throw new RuntimeException("No canvas. You should create a canvas before creating a new line.");
-        }
+public class Linha extends Elemento {
+
+    public Linha(String line, Canvas canvas) {
+        super(line, canvas);
         Matcher matcher = Pattern.compile("^L (\\d+) (\\d+) (\\d+) (\\d+)$").matcher(line);
         if (matcher.find()) {
             int startingX = Integer.parseInt(matcher.group(1));
